@@ -3,7 +3,9 @@ public class Main {
         Shape circle = new Circle();
         Shape square = new Square();
 
-        circle.draw();
-        square.draw();
+        Visitor drawer = new DrawVisitor();
+
+        circle.accept(drawer);
+        square.accept(drawer);
     }
 }
